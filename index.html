@@ -33,10 +33,13 @@
 	<body>
 		<div class="container wrapper">
 			<div class="header">
-	<img src=profile.jpg class="profile_image">
+	<img src=1.jpeg class="profile_image">
 	<h1 class="site-title">Zhihao Zhang</h1>
 	<div class="site-affilation">
 		<span class="affilation"><ul class="flat">
+			<li class="position">Master Student, Carnegie Mellon University</li>
+				<li class="email">zhihaoz3@andrew.cmu.edu</li>
+			</ul><ul class="flat">
 				<li class="position">Undergraduate Student, Renmin University of China</li>
 				<li class="email">zzh_jackfram@outlook.com</li>
 			</ul><ul class="flat">
@@ -46,10 +49,10 @@
 		
 
 		<nav class="nav social">
-			<ul class="flat"><a href="https://github.com/JackFram" title="GitHub"><i data-feather="github"></i></a><a href="https://twitter.com/jackfram2" title="Twitter"><i data-feather="twitter"></i></a>
+			<ul class="flat"><a href="https://github.com/JackFram" title="GitHub"><i data-feather="github"></i></a>
 				|
-				<a href="Zhihao_CV.pdf" class="blog_cv">[cv]</a>
-				
+				<a href="Zhihao_Resume.pdf" class="blog_cv">[cv]</a>
+				<a href="https://scholar.google.com/citations?user=nZXvhp0AAAAJ&hl=en" class="blog_cv">[google scholar]</a>
 				
 			</ul>
 		</nav>
@@ -63,16 +66,16 @@
 </div>
 
 			<div class="introduction"><span>
-		I am currently a visiting research scholar at Mechanical Systems Control Lab, UC Berkeley, supervised by Prof. Masayoshi
-    Tomizuka. I am also a senior student at Renmin University of China major in Computer Science. My interest mainly falls on reinforcement learning and machine learning. My goal is to incorporate learning algorithms
-    in traditional control tasks while achieving robustness and able to generalize well.
+		I am currently a second year MSR (master of science in robotics) student honorably supervised by Professor Zhihao Jia and Professor Changliu Liu.
 	</span>
 	<br><span>
-		Before coming to UC Berkeley, I was a research intern at Intelligent Control Lab, Carnegie Mellon University, and fortunately to be
-  advised by Prof. Changliu Liu.
+		My current interests lie on the intersection of machine learning system and deep learning theory.
 	</span>
 	<br><span>
-		<b>Interests.</b> Deep Reinforcement Learning, Machine Learning, Computer Vision
+		<b>Goals.</b> Making well-trained deep models reusable, compressible and verifiable from both a software and hardware end.
+	</span>
+	<br><span>
+		<b>Interests.</b> Machine Learning System, Deep Learning Theory
 	</span>
 </div>
 
@@ -81,54 +84,50 @@
 	<h4>Projects</h4>
 	<ul>
 		<li>
-			<a href="https://jackfram.github.io/AutoEnvDoc/docs/build/html/index.html" class="project"> AutoEnv, an integrated platform for autonomous driving simulation</a>
+			<a href="" class="project"> Topology Guided Network Compression (currently working on...) </a>
 
 			
 			<span class="code_blog">
 				
-				[<a href="https://github.com/JackFram/Autoenv">code</a>]
-				[<a href="./AutoEnv_Report.pdf">pdf</a>]
+				[<a href="https://github.com/JackFram/Neural-Flow">code</a>]
 
-				
 			</span>
 			
 
 			
 			<span class="project_description">
-				This platform includes trajectory and lane data preprocessing, physical simulation, algorithm implementation and evaluation.
+				Trying to guide multiple network compression techniques by the analysis of topological changing flow within the learned model.
 			</span>
 			
 
 		</li>
 		
 		<li>
-			<a href="https://github.com/JackFram/Vio_trace" class="project"> VioTrace, a system for violence detection and tracking </a>
+			<a href="" class="project"> GradSign: Model Performance Inference with Theoretical Insights </a>
 
 			
 			<span class="code_blog">
 				
-				[<a href="https://github.com/JackFram/Vio_trace">code</a>]
-				
-
+				[<a href="">pdf</a>]
 				
 			</span>
 			
 
 			
 			<span class="project_description">
-				We design a system named VioTrace to assist people in detecting violence behavior and tracking criminals in a multi-channel camera scenario. This system is consisted of two parts, violence detection and human re-identification. For the first part, we use a C3D network to detect the violence scene from a stream of video. During the second phase, we first implement YOLO v2 to give the bounding box of the person in the scene, then do human re-identification for multi-channel camera to track the person involved in the violence incident.
+				A key challenge in neural architecture search (NAS) is quickly inferring the predictive performance of a broad spectrum of networks to discover statistically accurate and computationally efficient ones.  We refer to this task as model performance inference (MPI). The current practice for efficient MPI is gradient-based methods that leverage the gradients of a network at initialization to infer its performance. However, existing gradient-based methods rely only on heuristic metrics and lack the necessary theoretical foundations to consolidate their designs.  We propose GradSign, an accurate, simple, and flexible metric for model performance inference with theoretical insights. The key idea behind GradSign is a quantity Ψ to analyze the optimization landscape of different networks at the granularity of individual training samples. Theoretically, we show that both the network’s training and true population losses are proportionally upper-bounded by Ψ under reasonable assumptions.  In addition, we design GradSign, an accurate and simple approximation of Ψ using the gradients of a network evaluated at a random initialization state.
 			</span>
 			
 
 		</li>
 		
 		<li>
-			<a href="https://realu.herokuapp.com/" class="project"> RealU, a web application for entrepreneurs preparing for their career</a>
+			<a href="" class="project"> Spatio-Temporal Graph Dual-Attention Network for Multi-Agent Prediction and Tracking</a>
 
 			
 			<span class="code_blog">
 				
-				[<a href="https://github.com/JackFram/RealU">code</a>]
+				[<a href="https://arxiv.org/pdf/2102.09117.pdf">pdf</a>]
 				
 
 				
@@ -137,7 +136,7 @@
 
 			
 			<span class="project_description">
-				An independent developed web application using flask. The motivation for this project is completely out of personal interest and want to practise for large scale programming as well.
+				Effective understanding of the environment and accurate trajectory prediction of surrounding dynamic obstacles are indispensable for intelligent mobile systems (like autonomous vehicles and social robots) to achieve safe and high-quality planning when they navigate in highly interactive and crowded scenarios. Due to the existence of frequent interactions and uncertainty in the scene evolution, it is desired for the prediction system to enable relational reasoning on different entities and provide a distribution of future trajectories for each agent. In this paper, we propose a generic generative neural system (called Social-WaGDAT) for multi-agent trajectory prediction, which makes a step forward to explicit interaction modeling by incorporating relational inductive biases with a dynamic graph representation and leverages both trajectory and scene context information. We also employ an efficient kinematic constraint layer applied to vehicle trajectory prediction which not only ensures physical feasibility but also enhances model performance.
 			</span>
 			
 
@@ -148,13 +147,22 @@
 
 			<div class="introduction">
 				<h4>Publications</h4>
+				<ul>
+					<li>
+						Spatio-Temporal Graph Dual-Attention Network for Multi-Agent Prediction and Tracking, IEEE Transactions on Intelligent Transportation Systems
+
+						<span class="collaborators">
+							Jiachen Li, Hengbo Ma, <strong>Zhihao Zhang</strong>, Masayoshi Tomizuka
+						</span>
+					</li>
+				</ul>
 				<div class="year">Preprint</div>
 				<ul>
 					<li>
-						Social-WaGDAT: Interaction-aware Trajectory Prediction via Wasserstein Graph Double-Attention Network,
-						on submitted to CVPR 2020
+						GradSign: Model Performance Inference with Theoretical Insights
+
 						<span class="collaborators">
-							Jiachen Li, Hengbo Ma, <strong>Zhihao Zhang</strong>, Masayoshi Tomizuka
+							<strong>Zhihao Zhang</strong>, Zhihao Jia
 						</span>
 					</li>
 				</ul>
