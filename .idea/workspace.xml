@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="01aa439a-6d21-4b59-a627-ba9e52565a2a" name="Default" comment="webpage updated">
+    <list default="true" id="01aa439a-6d21-4b59-a627-ba9e52565a2a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
@@ -18,7 +18,7 @@
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="801">
-              <caret line="71" column="77" lean-forward="true" selection-start-line="71" selection-start-column="77" selection-end-line="71" selection-end-column="77" />
+              <caret line="71" column="59" lean-forward="false" selection-start-line="71" selection-start-column="59" selection-end-line="71" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -207,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635225654079</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="webpage updated">
+      <created>1635225710103</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1635225710103</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -373,7 +380,7 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="801">
-          <caret line="71" column="77" lean-forward="true" selection-start-line="71" selection-start-column="77" selection-end-line="71" selection-end-column="77" />
+          <caret line="71" column="59" lean-forward="false" selection-start-line="71" selection-start-column="59" selection-end-line="71" selection-end-column="59" />
           <folding />
         </state>
       </provider>
