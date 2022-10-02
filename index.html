@@ -37,16 +37,10 @@
 	<h1 class="site-title">Zhihao Zhang</h1>
 	<div class="site-affilation">
 		<span class="affilation"><ul class="flat">
-			<li class="position">Master Student, Carnegie Mellon University</li>
-				<li class="email">zhihaoz3@andrew.cmu.edu</li>
-			</ul><ul class="flat">
-				<li class="position">Undergraduate Student, Renmin University of China</li>
-				<li class="email">zzh_jackfram@outlook.com</li>
-			</ul><ul class="flat">
-				<li class="position">Visiting Scholar, University of California, Berkeley</li>
-				<li class="email">zhihaozhang@berkeley.edu</li>
+			<li class="position">Ph.D. in Computer Science, Carnegie Mellon University</li>
+				<li class="email">zhihaoz3[at]cs[dot]cmu[dot]edu</li>
 			</ul></span>
-		
+
 
 		<nav class="nav social">
 			<ul class="flat"><a href="https://github.com/JackFram" title="GitHub"><i data-feather="github"></i></a>
@@ -66,21 +60,22 @@
 </div>
 
 			<div class="introduction"><span>
-				I am currently a second year MSR (master of science in robotics) student at Carnegie Mellon University and honorably
-				co-advised by Professor <a href="https://cs.stanford.edu/~zhihao/">Zhihao Jia</a> and
-				Professor <a href="http://www.cs.cmu.edu/~cliu6/">Changliu Liu</a>. Before coming to CMU, I received my B.S.
+				I am currently a first year Ph.D. student at Computer Science Department of Carnegie Mellon University and honorably
+				advised by Professor <a href="https://cs.stanford.edu/~zhihao/">Zhihao Jia</a>. Prior to that, I received my Master's degree in Robotics
+				at Carnegie Mellon University where I was honorably advised by Professor
+                <a href="http://www.cs.cmu.edu/~cliu6/">Changliu Liu</a>. I received my B.S.
                 degree in CS at Renmin University of China where I was honorably advised by Professor
                 <a href="http://jin-qin.com/">Qin Jin</a>.
 	</span>
 	<br><span>
-		My current research interests lie in the intersection of machine learning system and deep learning theory.
+		My current research interests lie in the intersection of machine learning and quantum computing.
 	</span>
 	<br><span>
-		<b>Goals.</b> 1. Making well-trained deep models (harder one: during training as well) more computational and storage efficient
-					from both software and hardware end. 2. Moving a step forward towards knowledge database and reusability of learned knowledge.
+		<b>Goals.</b> 1. Achieve quantum supremacy on classical deep learning. 2. Enable hardware-software co-optimization
+					for non-equivalent computational graph transformations.
 	</span>
 	<br><span>
-		<b>Interests.</b> Machine Learning System, Deep Learning Theory
+		<b>Interests.</b> Machine Learning, Quantum Learning
 	</span>
 </div>
 
@@ -89,21 +84,24 @@
 	<h4>Projects</h4>
 	<ul>
 		<li>
-			<a href="" class="project"> Topology Guided Network Compression (currently working on...) </a>
+			<a href="" class="project"> Quark: A Gradient-Free Quantum Learning Framework for Classification Tasks </a>
 
 			
 			<span class="code_blog">
 				
-				[<a href="https://github.com/JackFram/Neural-Flow">code</a>]
+				[<a href="">pdf</a>]
 
 			</span>
 			
 
 			
 			<span class="project_description">
-				Trying to guide multiple network compression techniques by the analysis of topological changing flow within the learned model.
+				We propose Quark, a gradient-free quantum learning framework for classification tasks that optimizes quantum ML models with quantum optimization. Quark avoids barren plateau and frequent classical-quantum interactions, supports more general models than prior quantum ML frameworks, and achieves a dataset-size-independent optimization complexity.
 			</span>
-			
+
+			<span>
+			<img src=KPD.jpeg class="profile_image">
+			</span>
 
 		</li>
 		
@@ -114,14 +112,22 @@
 			<span class="code_blog">
 				
 				[<a href="https://arxiv.org/abs/2110.08616">pdf</a>]
+				[<a href="https://github.com/cmu-catalyst/GradSign">code</a>]
 				
 			</span>
 			
 
 			
 			<span class="project_description">
-				A key challenge in neural architecture search (NAS) is quickly inferring the predictive performance of a broad spectrum of networks to discover statistically accurate and computationally efficient ones.  We refer to this task as model performance inference (MPI). The current practice for efficient MPI is gradient-based methods that leverage the gradients of a network at initialization to infer its performance. However, existing gradient-based methods rely only on heuristic metrics and lack the necessary theoretical foundations to consolidate their designs.  We propose GradSign, an accurate, simple, and flexible metric for model performance inference with theoretical insights. The key idea behind GradSign is a quantity Ψ to analyze the optimization landscape of different networks at the granularity of individual training samples. Theoretically, we show that both the network’s training and true population losses are proportionally upper-bounded by Ψ under reasonable assumptions.  In addition, we design GradSign, an accurate and simple approximation of Ψ using the gradients of a network evaluated at a random initialization state.
+				<!--A key challenge in neural architecture search (NAS) is quickly inferring the predictive performance of a broad spectrum of networks to discover statistically accurate and computationally efficient ones.  We refer to this task as model performance inference (MPI). The current practice for efficient MPI is gradient-based methods that leverage the gradients of a network at initialization to infer its performance. However, existing gradient-based methods rely only on heuristic metrics and lack the necessary theoretical foundations to consolidate their designs.  We propose GradSign, an accurate, simple, and flexible metric for model performance inference with theoretical insights. The key idea behind GradSign is a quantity Ψ to analyze the optimization landscape of different networks at the granularity of individual training samples. Theoretically, we show that both the network’s training and true population losses are proportionally upper-bounded by Ψ under reasonable assumptions.  In addition, we design GradSign, an accurate and simple approximation of Ψ using the gradients of a network evaluated at a random initialization state.-->
+				We propose GradSign, an accurate, simple, and flexible metric for model performance inference with theoretical insights.
 			</span>
+
+			<span>
+			<img src=GS_1.jpg class="profile_image">
+			</span>
+
+
 			
 
 		</li>
@@ -160,21 +166,31 @@
 							Jiachen Li, Hengbo Ma, <strong>Zhihao Zhang</strong>, Masayoshi Tomizuka
 						</span>
 					</li>
-				</ul>
-				<div class="year">Preprint</div>
-				<ul>
 					<li>
-						GradSign: Model Performance Inference with Theoretical Insights, to be appeared on ICLR 2022 main conference
+						GradSign: Model Performance Inference with Theoretical Insights, In Proceedings of ICLR 2022 main conference
 
 						<span class="collaborators">
 							<strong>Zhihao Zhang</strong>, Zhihao Jia
 						</span>
 					</li>
 				</ul>
+				<div class="year">Preprint</div>
+				<ul>
+					<li>
+						Quark: A Gradient-Free Quantum Learning Framework for Classification Tasks, Under Review
+
+						<span class="collaborators">
+							<strong>Zhihao Zhang</strong><sup>*</sup>, Zhuoming Chen<sup>*</sup>, Heyang Huang, Zhihao Jia
+						</span>
+					</li>
+				</ul>
 				<div class="year">Teaching</div>
 				<ul>
 					<li>
-						2019, Teaching Assistant, Multimedia technology, Renmin University of China
+						2019, TA, <strong>Multimedia technology</strong>, RUC
+					</li>
+					<li>
+						2022 Spring, TA for 15-849, <strong>Machine Learning System</strong>, CMU
 					</li>
 				</ul>
 			</div>
