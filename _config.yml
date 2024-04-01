@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Zhihao Zhang's Personal Webpage # the website title (if blank, full name will be used instead)
+title: # the website title (if blank, full name will be used instead)
 first_name: Zhihao
 middle_name:
 last_name: Zhang
@@ -39,7 +39,7 @@ repo_trophies:
 # will use title and url fields
 # Take a look to https://github.com/jekyll/jekyll-feed for more customization
 
-rss_icon: true
+rss_icon: false
 
 # -----------------------------------------------------------------------------
 # Layout
@@ -223,6 +223,7 @@ exclude:
   - _pages/dropdown.md
   - _pages/projects.md
   - _pages/repositories.md
+  - _pages/profiles.md
   - purgecss.config.js
   - README.md
   - readme_preview/
