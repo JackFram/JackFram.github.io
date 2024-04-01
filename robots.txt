@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://JackFram.github.io/sitemap.xml
+Sitemap: https://jackfram.github.io/sitemap.xml
