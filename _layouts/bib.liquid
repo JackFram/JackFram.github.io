@@ -90,6 +90,11 @@
             {{ author.last }}
           {% endif %}
         {%- endif -%}
+        {% if entry.cofirst %}
+          {% if forloop.index < entry.cofirst %}
+            <sup>*</sup>
+          {% endif %}
+        {%- endif -%}
       {% endfor %}
       {%- assign more_authors = author_array_size | minus: author_array_limit -%}
 
