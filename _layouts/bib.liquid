@@ -91,7 +91,7 @@
           {% endif %}
         {%- endif -%}
         {% if entry.cofirst %}
-            <sup>entry.cofirst</sup>
+            <sup>{{entry.cofirst}}</sup>
         {%- endif -%}
       {% endfor %}
       {%- assign more_authors = author_array_size | minus: author_array_limit -%}
