@@ -24,4 +24,8 @@ the [CMU Catalyst research group](https://catalyst.cs.cmu.edu/),
 and fortunate to be advised by [Prof. Zhihao Jia](https://www.cs.cmu.edu/~zhihaoj2/).
 
 Prior to joining CMU, I received my Master degree at the Robotics Institute of 
-Carnegie Mellon University and B.Sc in Computer Science at Renmin University of China.
+Carnegie Mellon University and B.Sc in Computer Science at Renmin University of China, 
+where I have been advised [Prof. Changliu Liu](https://www.cs.cmu.edu/~cliu6/) 
+and [Prof. Qin Jin](https://www.jin-qin.com/).
+
+Research interests: <em>Efficient System for Machine Learning</em>
