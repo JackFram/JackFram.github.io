@@ -78,8 +78,8 @@
       <file leaf-file-name="bib.liquid" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_layouts/bib.liquid">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="746">
-              <caret line="93" column="34" lean-forward="false" selection-start-line="93" selection-start-column="34" selection-end-line="93" selection-end-column="34" />
+            <state relative-caret-position="420">
+              <caret line="96" column="21" lean-forward="true" selection-start-line="96" selection-start-column="21" selection-end-line="96" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -93,6 +93,7 @@
       <find>selected</find>
       <find>post</find>
       <find>scholar</find>
+      <find>year</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -702,8 +703,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_layouts/bib.liquid">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="746">
-          <caret line="93" column="34" lean-forward="false" selection-start-line="93" selection-start-column="34" selection-end-line="93" selection-end-column="34" />
+        <state relative-caret-position="420">
+          <caret line="96" column="21" lean-forward="true" selection-start-line="96" selection-start-column="21" selection-end-line="96" selection-end-column="21" />
           <folding />
         </state>
       </provider>

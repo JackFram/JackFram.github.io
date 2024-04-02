@@ -91,7 +91,10 @@
           {% endif %}
         {%- endif -%}
         {% if entry.cofirst %}
-            <sup>{{entry.cofirst}}</sup>
+          {% assign cofirst_num = entry.cofirst | plus: 0 %}
+          {% if forloop.index < cofirst_num %}
+            <sup>*</sup>
+          {% endif %}
         {%- endif -%}
       {% endfor %}
       {%- assign more_authors = author_array_size | minus: author_array_limit -%}
