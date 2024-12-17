@@ -28,4 +28,4 @@ Carnegie Mellon University and B.Sc in Computer Science at Renmin University of 
 where I have been advised [Prof. Changliu Liu](https://www.cs.cmu.edu/~cliu6/) 
 and [Prof. Qin Jin](https://www.jin-qin.com/).
 
-Research interests: <em>Efficient System for Machine Learning</em>
+Research interests: 1. <em>Efficient System for serving large foundation models: **speculative decoding** and **sparse attention**</em> 2. Inferece-time-compute algorithms and system design 3. Domain specific accelerator and algorithm co-design.
