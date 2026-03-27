@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zhihao Zhang</title>
+  <meta name="description" content="Zhihao Zhang — PhD student at CMU, working on machine learning systems.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+    :root {
+      --bg: #fafaf8;
+      --fg: #1a1a1a;
+      --fg2: #555;
+      --fg3: #999;
+      --accent: #4a6cf7;
+      --line: #e8e8e4;
+      --hover: #000;
+      --code-bg: #f0f0ec;
+      --cursor: #4a6cf7;
+      --grain-opacity: 0.025;
+      --dot-opacity: 0.35;
+    }
+
+    html[data-theme="dark"] {
+      --bg: #0d0d0d;
+      --fg: #e0e0dc;
+      --fg2: #9a9a96;
+      --fg3: #5a5a56;
+      --accent: #7b93f7;
+      --line: #1e1e1c;
+      --hover: #fff;
+      --code-bg: #161614;
+      --cursor: #7b93f7;
+      --grain-opacity: 0.015;
+      --dot-opacity: 0.2;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Space Grotesk', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.7;
+      font-weight: 400;
+      transition: background 0.4s ease, color 0.3s ease;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Dot grid background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      opacity: var(--dot-opacity);
+      pointer-events: none;
+      z-index: 0;
+      background-image: radial-gradient(circle, var(--fg3) 0.5px, transparent 0.5px);
+      background-size: 24px 24px;
+    }
+
+    /* Grain overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      opacity: var(--grain-opacity);
+      pointer-events: none;
+      z-index: 1000;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .container {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ─── Mono helper ─── */
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* ─── Theme toggle ─── */
+    .theme-toggle {
+      position: fixed;
+      top: 2rem;
+      right: 2rem;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      cursor: pointer;
+      color: var(--fg3);
+      transition: color 0.2s, border-color 0.2s;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.4rem 0.7rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      border-radius: 4px;
+      gap: 0.4rem;
+    }
+    .theme-toggle:hover { color: var(--fg); border-color: var(--fg3); }
+    .theme-toggle svg { width: 14px; height: 14px; }
+    .theme-toggle .icon-moon,
+    html[data-theme="dark"] .theme-toggle .icon-sun { display: none; }
+    html[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
+    .theme-toggle .label-dark,
+    html[data-theme="dark"] .theme-toggle .label-light { display: none; }
+    html[data-theme="dark"] .theme-toggle .label-dark { display: inline; }
+
+    /* ─── Hero section ─── */
+    .hero {
+      padding-top: clamp(5rem, 18vh, 10rem);
+      padding-bottom: 3.5rem;
+    }
+
+    .hero-greeting {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--fg3);
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: rise 0.7s ease forwards;
+    }
+    .hero-greeting .prompt {
+      color: var(--accent);
+    }
+
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: clamp(2.2rem, 5vw, 3rem);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: rise 0.7s ease 0.1s forwards;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 0.9em;
+      background: var(--cursor);
+      margin-left: 4px;
+      vertical-align: text-bottom;
+      animation: blink 1s step-end infinite;
+    }
+
+    .hero .tagline {
+      font-size: 0.95rem;
+      color: var(--fg2);
+      font-weight: 300;
+      max-width: 500px;
+      line-height: 1.75;
+      opacity: 0;
+      animation: rise 0.7s ease 0.2s forwards;
+    }
+
+    .hero .tagline a {
+      border-bottom-color: var(--line);
+    }
+    .hero .tagline a:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    /* ─── Section ─── */
+    .section {
+      padding: 2.5rem 0;
+      opacity: 0;
+      animation: rise 0.7s ease 0.35s forwards;
+    }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 400;
+      color: var(--fg3);
+      margin-bottom: 1.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    /* ─── Papers ─── */
+    .paper {
+      display: grid;
+      grid-template-columns: 4rem 1fr;
+      gap: 0 1.5rem;
+      padding: 1.2rem 0;
+      border-top: 1px solid var(--line);
+      transition: all 0.2s;
+    }
+    .paper:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+    .paper:hover {
+      background: var(--code-bg);
+      margin: 0 -1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      border-radius: 6px;
+    }
+
+    .paper-meta {
+      padding-top: 0.1rem;
+    }
+    .paper-year {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--fg3);
+    }
+    .paper-venue {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      margin-top: 0.15rem;
+    }
+
+    .paper-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+      line-height: 1.5;
+      margin-bottom: 0.3rem;
+      letter-spacing: -0.01em;
+    }
+    .paper-title a {
+      border-bottom: none;
+    }
+    .paper-title a:hover {
+      color: var(--accent);
+    }
+
+    .paper-authors {
+      font-size: 0.78rem;
+      color: var(--fg3);
+      font-weight: 300;
+      line-height: 1.5;
+    }
+    .paper-authors .me {
+      color: var(--fg);
+      font-weight: 500;
+      background: var(--code-bg);
+      padding: 0.1em 0.35em;
+      border-radius: 3px;
+      font-size: 0.74rem;
+    }
+
+    /* ─── Links ─── */
+    .links {
+      padding: 3rem 0 1rem;
+      opacity: 0;
+      animation: rise 0.7s ease 0.5s forwards;
+    }
+
+    .links-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--fg3);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .links-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .links-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .links-row a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--fg2);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 0.45rem 0.85rem;
+      transition: all 0.2s;
+      border-bottom: 1px solid var(--line);
+    }
+    .links-row a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      background: var(--code-bg);
+    }
+
+    /* ─── Footer ─── */
+    footer {
+      padding: 4rem 0 3rem;
+      opacity: 0;
+      animation: rise 0.7s ease 0.65s forwards;
+    }
+    footer p {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--fg3);
+    }
+    footer .status-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #34d399;
+      margin-right: 0.4rem;
+      vertical-align: middle;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    /* ─── Animations ─── */
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 480px) {
+      html { font-size: 15px; }
+      .container { padding: 0 1.5rem; }
+      .paper { grid-template-columns: 1fr; gap: 0.2rem 0; }
+      .paper-meta { display: flex; gap: 0.75rem; align-items: center; }
+      .paper-venue { margin-top: 0; }
+      .theme-toggle { top: 1.25rem; right: 1.25rem; }
+      .links-row { gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+      <circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+    </svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+    </svg>
+    <span class="label-light">dark</span>
+    <span class="label-dark">light</span>
+  </button>
+
+  <div class="container">
+
+    <section class="hero">
+      <p class="hero-greeting"><span class="prompt">~</span> whoami</p>
+      <h1>Zhihao Zhang<span class="cursor"></span></h1>
+      <p class="tagline">
+        PhD student at <a href="https://catalyst.cs.cmu.edu/">CMU Catalyst</a>,
+        advised by <a href="https://www.cs.cmu.edu/~zhihaoj2/">Zhihao Jia</a>.<br>
+        I build systems that make large language models faster to train and serve.
+      </p>
+    </section>
+
+    <section class="section">
+      <p class="section-label">// selected papers</p>
+
+      <div class="paper">
+        <div class="paper-meta">
+          <div class="paper-year">2026</div>
+          <div class="paper-venue">OSDI</div>
+        </div>
+        <div>
+          <div class="paper-title"><a href="https://arxiv.org/abs/2512.22219">Mirage Persistent Kernel: A Compiler and Runtime for Mega-Kernelizing Tensor Programs</a></div>
+          <div class="paper-authors">Xinhao Cheng*, <span class="me">Zhihao Zhang*</span>, Yu Zhou*, Jianan Ji*, Jinchen Jiang, Zepeng Zhao, Ziruo Xiao, Zihao Ye, Yingyi Huang, Ruihang Lai, Hongyi Jin, Bohan Hou, Mengdi Wu, Yixin Dong, Anthony Yip, Zihao Ye, Songting Wang, Wenqin Yang, Xupeng Miao, Tianqi Chen, Zhihao Jia</div>
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-meta">
+          <div class="paper-year">2025</div>
+          <div class="paper-venue">ICLR</div>
+        </div>
+        <div>
+          <div class="paper-title"><a href="https://arxiv.org/abs/2410.05076">TidalDecode: Fast and Accurate LLM Decoding with Position Persistent Sparse Attention</a></div>
+          <div class="paper-authors">Lijie Yang*, <span class="me">Zhihao Zhang*</span>, Zhuofu Chen, Zikun Li, Zhihao Jia</div>
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-meta">
+          <div class="paper-year">2024</div>
+          <div class="paper-venue">ICML</div>
+        </div>
+        <div>
+          <div class="paper-title"><a href="https://arxiv.org/abs/2401.14021">Accelerating Retrieval-Augmented Language Model Serving with Speculation</a></div>
+          <div class="paper-authors"><span class="me">Zhihao Zhang</span>, Alan Zhu, Lijie Yang, Yihua Xu, Lanting Li, Phitchaya Mangpo Phothilimthana, Zhihao Jia</div>
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-meta">
+          <div class="paper-year">2024</div>
+          <div class="paper-venue">ASPLOS</div>
+        </div>
+        <div>
+          <div class="paper-title"><a href="https://arxiv.org/abs/2305.09781">SpecInfer: Accelerating Generative LLM Serving with Speculative Inference and Token Tree Verification</a></div>
+          <div class="paper-authors">Xupeng Miao*, Gabriele Oliaro*, <span class="me">Zhihao Zhang*</span>, Xinhao Cheng*, Zeyu Wang, Rae Ying Yee Wong, Zhuoming Chen, Daiyaan Arfeen, Reyna Abhyankar, Zhihao Jia</div>
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-meta">
+          <div class="paper-year">2021</div>
+          <div class="paper-venue">ICLR</div>
+        </div>
+        <div>
+          <div class="paper-title"><a href="https://openreview.net/pdf?id=HObMhrCeAAF">GradSign: Model Performance Inference with Theoretical Insights</a></div>
+          <div class="paper-authors"><span class="me">Zhihao Zhang</span>, Zhihao Jia</div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="links">
+      <p class="links-label">// links</p>
+      <div class="links-row">
+        <a href="https://scholar.google.com/citations?user=nZXvhp0AAAAJ">scholar</a>
+        <a href="https://github.com/JackFram">github</a>
+        <a href="mailto:zhihaoz3@cs.cmu.edu">email</a>
+      </div>
+    </section>
+
+    <footer>
+      <p><span class="status-dot"></span>open to collaboration · Pittsburgh, PA</p>
+    </footer>
+
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
+
+</body>
+</html>
